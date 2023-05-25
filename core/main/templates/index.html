@@ -1,0 +1,377 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
+
+    <title>{{ header.general_title }}</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-softy-pinko.css' %}">
+
+    </head>
+    
+    <body>
+    
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <a href="#" class="logo">
+                            <img src="{{ header.img.url }}" alt="Softy Pinko"/>
+                        </a>
+                        <ul class="nav">
+                            <li><a href="#welcome" class="active">{{ header.path1 }}</a></li>
+                            <li><a href="#features">{{ header.path2 }}</a></li>
+                            <li><a href="#work-process">{{ header.path3 }}</a></li>
+                            <li><a href="#testimonials">{{ header.path4 }}</a></li>
+                            <li><a href="#pricing-plans">{{ header.path5 }}</a></li>
+                            <li><a href="#blog">{{ header.path6 }}</a></li>
+                            <li><a href="#contact-us">{{ header.path7 }}</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div style="background-image: url({{ home.img.url }});" class="welcome-area" id="welcome">
+        <div class="header-text">
+            <div class="container">
+                <div class="row">
+                    <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
+                        <h1>{{ home.title }}<br><strong>{{ home.bold_word1 }}</strong></h1>
+                        <p>{{ home.subtitle }}</p>
+                        <a href="#features" class="main-button-slider">{{ home.btn_name }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="section home-feature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        {% for i in home_content %}
+                            <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
+                                <div class="features-small-item">
+                                    <div class="icon">
+                                        <i><img src="{{ i.img.url }}" alt=""></i>
+                                    </div>
+                                    <h5 class="features-title">{{ i.title }}</h5>
+                                    <p>{{ i.subtitle }}</p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section padding-top-70 padding-bottom-0" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-12 col-sm-12 align-self-center" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                    <img src="{{ about.img1.url }}" class="rounded img-fluid d-block mx-auto" alt="App">
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-6 col-md-12 col-sm-12 align-self-center mobile-top-fix">
+                    <div class="left-heading">
+                        <h2 class="section-title">{{ about.title1 }}</h2>
+                    </div>
+                    <div class="left-text">
+                        <p>{{ about.text1 }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hr"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section padding-bottom-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12 align-self-center mobile-bottom-fix">
+                    <div class="left-heading">
+                        <h2 class="section-title">{{ about.title2 }}</h2>
+                    </div>
+                    <div class="left-text">
+                        <p>{{ about.text2 }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-5 col-md-12 col-sm-12 align-self-center mobile-bottom-fix-big" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                    <img src="{{ about.img2.url }}" class="rounded img-fluid d-block mx-auto" alt="App">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="background-image: url({{ work_process.img.url }});" class="mini" id="work-process">
+        <div class="mini-content">
+            <div class="container">
+                <div class="row">
+                    <div class="offset-lg-3 col-lg-6">
+                        <div class="info">
+                            <h1>{{ work_process.title }}</h1>
+                            <p>{{ work_process.text }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    {% for i in work_process_content %}
+                        <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                            <a href="#" class="mini-box">
+                                <i><img src="{{ i.img.url }}" alt=""></i>
+                                <strong>{{ i.title }}</strong>
+                                <span>{{ i.subtitle }}</span>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section" id="testimonials">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="center-heading">
+                        <h2 class="section-title">{{ testimonial.title }}</h2>
+                    </div>
+                </div>
+                <div class="offset-lg-3 col-lg-6">
+                    <div class="center-text">
+                        <p>{{ testimonial.text }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for i in testimonial_content %}
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="team-item">
+                            <div class="team-content">
+                                <i><img src="{{ i.img1.url }}" alt=""></i>
+                                <p>{{ i.text }}</p>
+                                <div class="user-image">
+                                    <img src="{{ i.img2.url }}" alt="">
+                                </div>
+                                <div class="team-info">
+                                    <h3 class="user-name">{{ i.name }}</h3>
+                                    <span>{{ i.profession }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section class="section colored" id="pricing-plans">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="center-heading">
+                        <h2 class="section-title">{{ pricing_plan.title }}</h2>
+                    </div>
+                </div>
+                <div class="offset-lg-3 col-lg-6">
+                    <div class="center-text">
+                        <p>{{ pricing_plan.text }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for i in pricing_plan_offer %}
+                    <div class="col-lg-4 col-md-6 col-sm-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
+                        <div class="pricing-item">
+                            <div class="pricing-header">
+                                <h3 class="pricing-title">{{ i.title }}</h3>
+                            </div>
+                            <div class="pricing-body">
+                                <div class="price-wrapper">
+                                    <span class="currency">$</span>
+                                    <span class="price">{{ i.price }}</span>
+                                    <span class="period">{{ i.date }}</span>
+                                </div>
+                                <ul class="list">
+                                    <li class="active">{{ i.offer1 }}</li>
+                                    <li class="active">{{ i.offer2 }}</li>
+                                    <li class="active">{{ i.offer3 }}</li>
+                                    <li>{{ i.offer4 }}</li>
+                                    <li>{{ i.offer5 }}</li>
+                                    <li>{{ i.offer6 }}</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-footer">
+                                <a href="#" class="main-button">{{ pricing_plan.btn_name }}</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section style="background-image: url({{ pricing_plan.img.url }});" class="counter">
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    {% for i in pricing_plan_content %}
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div class="count-item decoration-{{ i.position }}">
+                                <strong>{{ i.count }}</strong>
+                                <span>{{ i.title }}</span>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section" id="blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="center-heading">
+                        <h2 class="section-title">{{ blog_entries.title }}</h2>
+                    </div>
+                </div>
+                <div class="offset-lg-3 col-lg-6">
+                    <div class="center-text">
+                        <p>{{ blog_entries.text }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for i in blog_entries_content %}
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="blog-post-thumb">
+                            <div class="img">
+                                <img src="{{ i.img.url }}" alt="">
+                            </div>
+                            <div class="blog-content">
+                                <h3>
+                                    <a href="#">{{ i.title }}</a>
+                                </h3>
+                                <div class="text">{{ i.text }}</div>
+                                <a href="#" class="main-button">{{ blog_entries.btn_name }}</a>
+                            </div>
+                        </div>
+                    </div>
+            {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section class="section colored" id="contact-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="center-heading">
+                        <h2 class="section-title">{{ contact_get.title }}</h2>
+                    </div>
+                </div>
+                <div class="offset-lg-3 col-lg-6">
+                    <div class="center-text">
+                        <p>{{ contact_get.text1 }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <h5 class="margin-bottom-30">{{ contact_get.subtitle }}</h5>
+                    <div class="contact-text">
+                        <p>{{ contact_get.text2 }}</p>
+                        <br>
+                        <p>{{ contact_get.text3 }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-6 col-sm-12">
+                    <div class="contact-form">
+                        <form id="contact" method="post">
+                            {% csrf_token %}
+                            <div class="row">
+                              <div class="col-lg-6 col-md-12 col-sm-12">
+                                <fieldset>
+                                  <input name="user_name" type="text" class="form-control" id="name" placeholder="{{ contact_get.placeholder1 }}" required="">
+                                </fieldset>
+                              </div>
+                              <div class="col-lg-6 col-md-12 col-sm-12">
+                                <fieldset>
+                                  <input name="user_email" type="email" class="form-control" id="email" placeholder="{{ contact_get.placeholder2 }}" required="">
+                                </fieldset>
+                              </div>
+                              <div class="col-lg-12">
+                                <fieldset>
+                                  <textarea name="user_message" rows="6" class="form-control" id="message" placeholder="{{ contact_get.placeholder3 }}" required=""></textarea>
+                                </fieldset>
+                              </div>
+                              <div class="col-lg-12">
+                                <fieldset>
+                                  <button type="submit" id="form-submit" class="main-button">{{ contact_get.btn_name }}</button>
+                                </fieldset>
+                              </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <ul class="social">
+                        <li><a href="{{ footer.social_url1 }}"><i class="fa fa-{{ footer.social1 }}"></i></a></li>
+                        <li><a href="{{ footer.social_url2 }}"><i class="fa fa-{{ footer.social2 }}"></i></a></li>
+                        <li><a href="{{ footer.social_url3 }}"><i class="fa fa-{{ footer.social3 }}"></i></a></li>
+                        <li><a href="{{ footer.social_url4 }}"><i class="fa fa-{{ footer.social4 }}"></i></a></li>
+                        <li><a href="{{ footer.social_url5 }}"><i class="fa fa-{{ footer.social5 }}"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="copyright">{{ footer.copyright1 }}</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'assets/js/jquery-2.1.0.min.js' %}"></script>
+
+    <script src="{% static 'assets/js/popper.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+
+    <script src="{% static 'assets/js/scrollreveal.min.js' %}"></script>
+    <script src="{% static 'assets/js/waypoints.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'assets/js/imgfix.min.js' %}"></script> 
+    
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+
+  </body>
+</html>
